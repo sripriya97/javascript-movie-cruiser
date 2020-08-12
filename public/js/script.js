@@ -33,7 +33,6 @@ function getFavourites() {
             else return Promise.reject(new Error("Error"));
 
         }).then(result => {
-            console.log(result);
             let favourtiteList = document.querySelector('#favouritesList');
             result.forEach(element => {
                 favouriteString += `<li>${element.id} | ${element.title} | ${element.posterPath}</li>`
@@ -42,7 +41,6 @@ function getFavourites() {
             favArray = result;
             return result;
         }).catch(err => {
-            console.log(err);
             return err;
         })
 }
